@@ -1,21 +1,21 @@
-import LinkedList from '../linkedList/linkedList';
+import LinkedList from "../linkedList/linkedList";
 
-export default class Stack {
+export default class Queue {
     constructor() {
         this.linkedList = new LinkedList();
     }
 
     isEmpty() {
-        return this.linkedList.length === 0;
+        return this.linkedList.length() === 0;
     }
 
-    push(value) {
-        this.linkedList.prepend(value);
+    enqueue(value) {
+        this.linkedList.append(value);
     }
 
-    pop() {
+    dequeue() {
         const removedHead = this.linkedList.deleteHead();
-        return removedHead ? removedHead.value : null;
+        return removedHead ? removedHead.value : null
     }
 
     peek() {
